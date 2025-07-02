@@ -47,12 +47,30 @@ public class PlaywrightManager {
     }
 
     public static void close() {
-        if (playwrightThread.get() != null) {
-            playwrightThread.get().close();
+    	{
+            Page page = pageThread.get();
+            if (page != null) {
+                page.close();
+                pageThread.remove();
+            }
+            
+            BrowserContext context = contextThread.get();
+            if (context != null) {
+                context.close();
+                contextThread.remove();
+            }
+            
+            Browser browser = browserThread.get();
+            if (browser != null) {
+                browser.close();
+                browserThread.remove();
+            }
+            
+            Playwright playwright = playwrightThread.get();
+            if (playwright != null) {
+                playwright.close();
+                playwrightThread.remove();
+            }
         }
-        playwrightThread.remove();
-        browserThread.remove();
-        contextThread.remove();
-        pageThread.remove();
     }
 }
