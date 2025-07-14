@@ -1,5 +1,7 @@
 package com.automation.core.framework.factory;
 
+import java.util.Arrays;
+
 import com.automation.common.framework.enums.BrowserTypeEnum;
 import com.automation.common.framework.exceptions.FrameworkException;
 import com.microsoft.playwright.BrowserType;
@@ -20,7 +22,8 @@ public class BrowserFactory {
             case WEBKIT:
                 return playwright.webkit();
             default:
-                throw new FrameworkException("Unsupported browser type: " + browserName);
+                throw new FrameworkException("Unsupported browser type: " + browserName+ 
+                        ". Valid options: " + Arrays.toString(BrowserTypeEnum.values()));
         }
     }
 }

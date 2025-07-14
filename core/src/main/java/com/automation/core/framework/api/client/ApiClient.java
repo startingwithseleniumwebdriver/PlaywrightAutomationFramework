@@ -67,6 +67,13 @@ public class ApiClient {
 			default:
 				throw new FrameworkException("Unsupported method: " + method);
 			}
+			
+		    if (response.status() < 200 || response.status() >= 300) {
+		        String errorBody = response.text();
+		        log.error("API Error {}: {}", response.status(), errorBody);
+		        throw new FrameworkException("API request failed. Status: " + response.status());
+		    }
+		    
 	        log.debug("Response Status: {}", response.status());
 	        log.debug("Response Body: {}", response.text());
 	        return response.text();

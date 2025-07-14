@@ -11,7 +11,7 @@ import com.automation.core.framework.logging.LoggerManager;
 import com.microsoft.playwright.Page;
 
 public class ScreenshotHelper {
-	private static final ScreenshotMode mode = ScreenshotMode.from(ConfigFactorySingleton.getConfig().screenshotMode());
+	private static final ScreenshotMode mode = ScreenshotMode.from(ConfigFactorySingleton.getConfig().screenshotMode().toString());
 
 	private ScreenshotHelper() {}
 

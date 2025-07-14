@@ -4,6 +4,9 @@ import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.LoadPolicy;
 import org.aeonbits.owner.Config.Sources;
 
+import com.automation.common.framework.enums.ScreenshotMode;
+import com.automation.core.framework.utils.EnumConverter;
+
 @LoadPolicy(Config.LoadType.MERGE)
 @Sources({ "system:properties", "classpath:framework.properties" })
 public interface FrameworkConfig extends Config {
@@ -69,9 +72,10 @@ public interface FrameworkConfig extends Config {
 	String webUrlProd();
 
 	// Screenshot/Tracing
+	@ConverterClass(EnumConverter.class)
 	@Key("screenshot.mode")
 	@DefaultValue("FAILURE_ONLY")
-	String screenshotMode();
+	ScreenshotMode screenshotMode();
 
 	@Key("screenshot.fullPage")
 	@DefaultValue("true")
