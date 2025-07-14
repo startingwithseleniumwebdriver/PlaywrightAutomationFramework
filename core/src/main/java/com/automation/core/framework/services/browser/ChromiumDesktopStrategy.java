@@ -16,7 +16,6 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.options.ViewportSize;
 
 public class ChromiumDesktopStrategy implements BrowserLaunchStrategy {
 

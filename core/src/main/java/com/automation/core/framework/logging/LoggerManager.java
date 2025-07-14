@@ -2,7 +2,6 @@ package com.automation.core.framework.logging;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
