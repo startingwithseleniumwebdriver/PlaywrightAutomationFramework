@@ -9,6 +9,14 @@ import org.aeonbits.owner.ConfigFactory;
 
 import com.automation.common.framework.exceptions.FrameworkException;
 
+/*
+ * ConfigFactorySingleton.java
+ * 
+ * This class provides a singleton instance of FrameworkConfig and Properties,
+ * ensuring thread-safe access and lazy initialization.
+ * 
+ * It loads configuration from 'framework.properties' file located in the resources directory.
+ */
 public final class ConfigFactorySingleton {
 
     private static FrameworkConfig config;

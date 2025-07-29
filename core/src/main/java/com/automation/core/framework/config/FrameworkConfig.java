@@ -7,6 +7,12 @@ import org.aeonbits.owner.Config.Sources;
 import com.automation.common.framework.enums.ScreenshotMode;
 import com.automation.core.framework.utils.EnumConverter;
 
+/**
+ * Framework configuration interface for managing application settings. This
+ * interface uses the OWNER library to load configurations from properties
+ * files. It supports merging configurations from multiple sources.
+ */
+
 @LoadPolicy(Config.LoadType.MERGE)
 @Sources({ "system:properties", "classpath:framework.properties" })
 public interface FrameworkConfig extends Config {
